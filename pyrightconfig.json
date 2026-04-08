@@ -1,0 +1,16 @@
+{
+  "venvPath": "/home/juanm/dev/proyectos/perfume_inventory",
+  "venv": "venv",
+  "pythonVersion": 3.11,
+  "pythonPath": "/home/juanm/dev/proyectos/perfume_inventory/venv/bin/python",
+  "extraPaths": [
+    "/home/juanm/dev/proyectos/perfume_inventory/venv/Lib/site-packages"
+  ],
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "venv",
+    "**/__pycache__"
+  ]
+}

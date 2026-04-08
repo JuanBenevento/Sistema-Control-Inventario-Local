@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>750</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Control de Stock</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <property name="spacing">
+     <number>10</number>
+    </property>
+    <property name="contentsMargins">
+     <number>15</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="headerWidget">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string>background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #2c3e50, stop:1 #34495e); border-radius: 5px;</string>
+      </property>
+      <layout class="QHBoxLayout" name="headerLayout">
+       <property name="contentsMargins">
+        <number>15</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="lbl_titulo">
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>18</pointsize>
+           <weight>75</weight>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string>color: white;</string>
+         </property>
+         <property name="text">
+          <string>Control de Stock</string>
+         </property>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignRight">
+        <widget class="QLabel" name="lbl_operador">
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string>color: rgba(255,255,255,200); background: rgba(0,0,0,50); padding: 5px 12px; border-radius: 3px;</string>
+         </property>
+         <property name="text">
+          <string>Usuario: ---</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="operationsWidget">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string>background: #ecf0f1; border-radius: 5px;</string>
+      </property>
+      <layout class="QHBoxLayout" name="operationsLayout">
+       <property name="spacing">
+        <number>15</number>
+       </property>
+       <property name="contentsMargins">
+        <number>15</number>
+       </property>
+       <item>
+        <layout class="QVBoxLayout" name="barcodeLayout">
+         <property name="spacing">
+          <number>3</number>
+         </property>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="lbl_barcode">
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>8</pointsize>
+             <weight>75</weight>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string>color: #7f8c8d;</string>
+           </property>
+           <property name="text">
+            <string>CODIGO</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="txt_codigo">
+           <property name="minimumSize">
+            <size>
+             <width>120</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string>border: 1px solid #bdc3c7; border-radius: 4px; padding: 5px;</string>
+           </property>
+           <property name="placeholderText">
+            <string>Escanear...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="modoLayout">
+         <property name="spacing">
+          <number>3</number>
+         </property>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="lbl_modo">
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>8</pointsize>
+             <weight>75</weight>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string>color: #7f8c8d;</string>
+           </property>
+           <property name="text">
+            <string>OPERACION</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QWidget">
+           <layout class="QHBoxLayout" name="modoButtonsLayout">
+            <property name="spacing">
+             <number>8</number>
+            </property>
+            <item>
+             <widget class="QRadioButton" name="rb_ingreso">
+              <property name="font">
+               <font>
+                <family>Segoe UI</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Ingreso</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="rb_venta">
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="font">
+               <font>
+                <family>Segoe UI</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Venta</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="cantidadLayout">
+         <property name="spacing">
+          <number>3</number>
+         </property>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="lbl_cantidad">
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>8</pointsize>
+             <weight>75</weight>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string>color: #7f8c8d;</string>
+           </property>
+           <property name="text">
+            <string>CANTIDAD</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spn_cantidad">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string>border: 1px solid #bdc3c7; border-radius: 4px; padding: 5px;</string>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>999</number>
+           </property>
+           <property name="value">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="buscarLayout">
+         <property name="spacing">
+          <number>3</number>
+         </property>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="lbl_buscar">
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>8</pointsize>
+             <weight>75</weight>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string>color: #7f8c8d;</string>
+           </property>
+           <property name="text">
+            <string>BUSCAR</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="txt_filtro">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string>border: 1px solid #bdc3c7; border-radius: 4px; padding: 5px;</string>
+           </property>
+           <property name="placeholderText">
+            <string>Nombre, marca...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lbl_mensaje">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>35</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>color: #555; background: #f8f9fa; border-radius: 4px; padding: 8px;</string>
+      </property>
+      <property name="text">
+       <string>Listo para escanear...</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTableView" name="tabla_stock">
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string>QTableView { border: 1px solid #ddd; border-radius: 5px; }
+QTableView::item { padding: 5px; }
+QTableView::item:selected { background: #3498db; color: white; }</string>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="actionsWidget">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>50</height>
+       </size>
+      </property>
+      <layout class="QHBoxLayout" name="actionsLayout">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="btn_editar">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string>QPushButton { background: #3498db; color: white; border: none; border-radius: 5px; }
+QPushButton:hover { background: #2980b9; }</string>
+         </property>
+         <property name="text">
+          <string>Editar</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_historial">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string>QPushButton { background: #9b59b6; color: white; border: none; border-radius: 5px; }
+QPushButton:hover { background: #8e44ad; }</string>
+         </property>
+         <property name="text">
+          <string>Historial</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_eliminar">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string>QPushButton { background: #e74c3c; color: white; border: none; border-radius: 5px; }
+QPushButton:hover { background: #c0392b; }</string>
+         </property>
+         <property name="text">
+          <string>Eliminar</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_dashboard">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string>QPushButton { background: #f39c12; color: white; border: none; border-radius: 5px; }
+QPushButton:hover { background: #d68910; }</string>
+         </property>
+         <property name="text">
+          <string>Dashboard</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_categorias">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string>QPushButton { background: #e67e22; color: white; border: none; border-radius: 5px; }
+QPushButton:hover { background: #d35400; }</string>
+         </property>
+         <property name="text">
+          <string>Categorias</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_proveedores">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string>QPushButton { background: #8e44ad; color: white; border: none; border-radius: 5px; }
+QPushButton:hover { background: #7d3c98; }</string>
+         </property>
+         <property name="text">
+          <string>Proveedores</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_exportar">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string>QPushButton { background: #16a085; color: white; border: none; border-radius: 5px; }
+QPushButton:hover { background: #138d75; }</string>
+         </property>
+         <property name="text">
+          <string>Exportar</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_usuarios">
+         <property name="minimumSize">
+          <size>
+           <width>130</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string>QPushButton { background: #34495e; color: white; border: none; border-radius: 5px; }
+QPushButton:hover { background: #2c3e50; }</string>
+         </property>
+         <property name="text">
+          <string>Usuarios</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="actionsSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+</ui>
