@@ -150,7 +150,7 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 ## 👤 Autor
 
-Juan Manuel Bnevento - [GitHub](https://github.com/JuanBnevento)
+Juan Manuel Benevento - [GitHub](https://github.com/JuanBnevento)
 
 ---
 
