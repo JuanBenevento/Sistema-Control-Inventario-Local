@@ -152,6 +152,3 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 Juan Manuel Benevento - [GitHub](https://github.com/JuanBnevento)
 
----
-
-⭐️ Si este proyecto te útil, ¡dale una estrella!
